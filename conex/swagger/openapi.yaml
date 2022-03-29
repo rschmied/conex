@@ -1,0 +1,35 @@
+---
+openapi: "3.0.0"
+info:
+  description: "Some service"
+  version: "0"
+  title: "hello"
+  contact:
+      email: "me@home.com"
+servers:
+  - url: /api
+paths:
+  /hello:
+    post:
+      summary: "hello"
+      description: "hello"
+      operationId: conex.hello
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              nullable: true
+              properties:
+                title:
+                  type: string
+                pages:
+                  type: integer
+      responses:
+        4XX:
+          description: "Failure"
+        200:
+          description: "Success"
+
